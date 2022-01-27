@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 export class NewsItem extends Component {
   render() {
-    let {title,description} =this.props;
-    return <div>
+    let {title,description,imageURL,newsURL} =this.props;   //Destructuring
+    return <div className="my-3">
         <div className="card" style={{width:"18rem"}}>
-          <img src="https://img.huffingtonpost.com/asset/61f1d9e0270000cc03456c47.jpeg?cache=0ruD88EOO3&ops=1778_1000" className="card-img-top" alt="..." />
+          <img src={imageURL} className="card-img-top" alt="..." />
           <div className="card-body">
-            <h5 className="card-title">{title}</h5>
-            <p className="card-text">{description}</p>
-            <a href="/" className="btn btn-primary">Go somewhere</a>
+            <h5 className="card-title">{title}...</h5>
+            <p className="card-text">{description}...</p>
+            <a href={newsURL} target="_blank" className="btn btn-sm btn-primary">Read More</a>
           </div>
         </div>
     </div>;

@@ -2,20 +2,249 @@ import React, { Component } from 'react';
 import NewsItem from './NewsItem';
 
 export class News extends Component {
+  
+  articles=[{
+    "source": {
+        "id": "the-huffington-post",
+        "name": "The Huffington Post"
+    },
+    "author": "Nick Visser",
+    "title": "New York Attorney General Moves To Toss Out Trump’s Case Against Fraud Probe",
+    "description": "“We will not be deterred by frivolous lawsuits,\" Letitia James said.",
+    "url": "https://www.huffpost.com/entry/letitia-james-trump-fraud-probe_n_61f1d3b4e4b094ce54a5adad",
+    "urlToImage": "https://img.huffingtonpost.com/asset/61f1d9e0270000cc03456c47.jpeg?cache=0ruD88EOO3&ops=1778_1000",
+    "publishedAt": "2022-01-27T00:48:04Z",
+    "content": "New York Attorney General Letitia James filed a motion on Wednesday to throw out former President Donald Trumps effort to stop an investigation into his business dealings, calling the effort a frivol… [+3078 chars]"
+}, {
+    "source": {
+        "id": "usa-today",
+        "name": "USA Today"
+    },
+    "author": null,
+    "title": "Bickering with and insulting the press isn't new. How Biden's hot mic moment fits into presidential history",
+    "description": "From George Washington to Donald Trump, every U.S. president has attacked reporters – not always publicly, not always profanely, but consistently.",
+    "url": "https://www.usatoday.com/story/news/politics/2022/01/26/biden-fox-doocy-presidents-insulting-reporters/9213510002/",
+    "urlToImage": "https://www.gannett-cdn.com/presto/2022/01/19/USAT/158e7d2b-c475-4bcd-b90e-fede65092947-Biden_finger_pointing.jpg?crop=5056,2844,x0,y0&width=3200&height=1801&format=pjpg&auto=webp",
+    "publishedAt": "2022-01-27T00:42:01+00:00",
+    "content": "WASHINGTON  American presidents live in a big white house that is often filled with reporters, cameras and microphones.\r\nThere's always going to be some tension.\r\nSometimes it spills out into the pub… [+185 chars]"
+}, {
+    "source": {
+        "id": "cnn",
+        "name": "CNN"
+    },
+    "author": "Holmes Lybrand, Andrew Millman and Katelyn Polantz, CNN",
+    "title": "Judge casts doubt on January 6 defense strategy of calling Trump to the stand",
+    "description": "A federal judge appeared unconvinced on Wednesday that Donald Trump should be allowed to testify at a trial of a US Capitol riot defendant who is arguing the former President could be a helpful witness.",
+    "url": "http://us.cnn.com/2022/01/26/politics/january-6-judge-unconvinced-donald-trump-testify/index.html",
+    "urlToImage": "https://cdn.cnn.com/cnnnext/dam/assets/220105165221-jan-6-capitol-riot-super-tease.jpg",
+    "publishedAt": "2022-01-26T21:57:07Z",
+    "content": null
+}, {
+    "source": {
+        "id": "ansa",
+        "name": "ANSA.it"
+    },
+    "author": "ANSA.it",
+    "title": "Usa: anche Melania Trump tra le vittime del crollo criptovalute - Ultima Ora",
+    "description": "L'ex first lady Melania Trump e' una delle vittime del crollo delle criptovalute. (ANSA)",
+    "url": "http://www.ansa.it/sito/notizie/topnews/2022/01/26/usa-anche-melania-trump-tra-le-vittime-del-crollo-criptovalute_94fbd429-4915-49ac-9b02-6adf882b5b31.html",
+    "urlToImage": "https://www.ansa.it/webimages/img_700/2022/1/26/97c2aa56f47289874f094e6cccf71cbe.jpg",
+    "publishedAt": "2022-01-26T18:30:00Z",
+    "content": "(ANSA) - NEW YORK, 26 GEN - L'ex first lady Melania Trump e'\r\nuna delle vittime del crollo delle criptovalute. La moglie\r\ndell'ex presidente Usa Donald Trump ha messo all'asta insieme ad\r\naltri due o… [+675 chars]"
+}, {
+    "source": {
+        "id": "business-insider",
+        "name": "Business Insider"
+    },
+    "author": "Tom Porter",
+    "title": "Trump had $93M in cash in 2020, much less than he's claimed: Forbes",
+    "description": "The figure is vastly less than the $793 million Trump boasted of having in the bank while running for president in 2015.",
+    "url": "http://www.businessinsider.com/trump-93-million-cash-less-than-claimed-forbes-2022-1\n                              ",
+    "urlToImage": "https://i.insider.com/61f12c1ce996470011906cfc?width=1200&format=jpeg",
+    "publishedAt": "2022-01-26T12:39:51Z",
+    "content": "Donald Trump had about $93 million in cash during the final year of his presidency, a sum substantially smaller than he had claimed to have in the bank in previous years, Forbes reported Monday.\r\nFor… [+3112 chars]"
+}, {
+    "source": {
+        "id": "business-insider-uk",
+        "name": "Business Insider (UK)"
+    },
+    "author": "Tom Porter",
+    "title": "Trump had $93M in cash in 2020, much less than he's claimed: Forbes",
+    "description": "The figure is vastly less than the $793 million Trump boasted of having in the bank while running for president in 2015.",
+    "url": "http://uk.businessinsider.com/trump-93-million-cash-less-than-claimed-forbes-2022-1\n                              ",
+    "urlToImage": "https://i.insider.com/61f12c1ce996470011906cfc?width=1200&format=jpeg",
+    "publishedAt": "2022-01-26T12:39:51Z",
+    "content": "Donald Trump had about $93 million in cash during the final year of his presidency, a sum substantially smaller than he had claimed to have in the bank in previous years, Forbes reported Monday.\r\nFor… [+3112 chars]"
+}, {
+    "source": {
+        "id": "the-washington-times",
+        "name": "The Washington Times"
+    },
+    "author": "Kelly Sadler",
+    "title": "If Trump were president, China would be paying reparations",
+    "description": "Two years ago, a pandemic emerged from China that has since killed more than 5 million people worldwide, cost trillions of dollars in lost economic output, shuttered schools and businesses, and ruined countless lives.",
+    "url": "https://www.washingtontimes.com/news/2022/jan/26/if-trump-were-president-china-would-be-paying-repa/",
+    "urlToImage": "https://twt-thumbs.washtimes.com/media/image/2022/01/26/B1-SADL-China-Pay-G_c0-132-1392-944_s1200x700.jpg?5e8bf79ea97dcbbdad73e8e08293ccb833d9e6e5",
+    "publishedAt": "2022-01-26T10:25:21Z",
+    "content": "OPINION:\r\nTwo years ago, a pandemic emerged from China that has since killed more than 5 million people worldwide, cost trillions of dollars in lost economic output, shuttered schools and businesses,… [+5130 chars]"
+}, {
+    "source": {
+        "id": "time",
+        "name": "Time"
+    },
+    "author": "Barbara F. Walter",
+    "title": "Trump Could Still Lead the U.S. to Civil War—Even if He Doesn't Run in 2024",
+    "description": "There are worrying parallels when we compare what's happening in the U.S. to what happened in other countries torn apart by civil wars",
+    "url": "http://time.com/6141468/trump-us-civil-war/",
+    "urlToImage": "https://api.time.com/wp-content/uploads/2022/01/Trump-Milosevic-03.jpg?quality=85&w=1200&h=628&crop=1",
+    "publishedAt": "2022-01-24T19:10:01Z",
+    "content": "Ask most people why countries break apart and many will say that different groups sharing a single country naturally dislike and distrust one another. Yugoslavia fragmented because the Serbs and Croa… [+14289 chars]"
+}, {
+    "source": {
+        "id": "newsweek",
+        "name": "Newsweek"
+    },
+    "author": "Ewan Palmer",
+    "title": "Donald Trump Says Ron DeSantis Feud Claims 'Totally Fake News'",
+    "description": "There has been speculation that the former president is starting to turn on one of his biggest allies in the GOP.",
+    "url": "https://www.newsweek.com/donald-trump-feud-ron-desantis-hannity-denied-1671464",
+    "urlToImage": "https://d.newsweek.com/en/full/1972727/trump-desantis.jpg",
+    "publishedAt": "2022-01-21T08:55:20Z",
+    "content": "Donald Trump has denied reports of a rift between him and Ron DeSantis, insisting the claims are \"totally fake news.\"\r\nSpeaking to Fox News' Sean Hannity, the former president said: \"I get along grea… [+2526 chars]"
+}, {
+    "source": {
+        "id": "national-review",
+        "name": "National Review"
+    },
+    "author": "William E. Trachman",
+    "title": "Joe Biden Abandons Due Process",
+    "description": "The Biden administration is taking a dive to let crucial Trump-administration Title IX reforms lapse.",
+    "url": "https://www.nationalreview.com/2021/10/joe-biden-abandons-due-process/",
+    "urlToImage": "https://www.nationalreview.com/wp-content/uploads/2018/04/students-college-campus.jpg?fit=2057%2C1200",
+    "publishedAt": "2021-10-04T10:30:19Z",
+    "content": null
+}, {
+    "source": {
+        "id": "msnbc",
+        "name": "MSNBC"
+    },
+    "author": "MSNBC",
+    "title": "Man sentenced to up to 10 years for shooting Black girl at Iowa Trump rally",
+    "description": "An Iowa man who shot into a car full of Black girls during a rally for then-president President Donald Trump last year was sentenced to up to 10 years in prison.",
+    "url": "https://www.nbcnews.com/news/us-news/man-sentenced-10-years-shooting-black-girl-iowa-trump-rally-n1276391",
+    "urlToImage": "https://media-cldnry.s-nbcnews.com/image/upload/t_nbcnews-fp-1200-630,f_auto,q_auto:best/newscms/2019_01/2705191/nbc-social-default.png",
+    "publishedAt": "2021-08-10T05:59:10Z",
+    "content": "DES MOINES, Iowa A man was sentenced Monday to up to 10 years in prison for shooting into a car full of Black teenage girls after an Iowa rally for then-President Donald Trump, injuring one girl.\r\nMi… [+1658 chars]"
+}, {
+    "source": {
+        "id": "aftenposten",
+        "name": "Aftenposten"
+    },
+    "author": "NTB-AP-AFP",
+    "title": "Oberstløytnant som vitnet mot Trump, går av",
+    "description": "Oberstløytnant Alexander Vindman, som vitnet mot president Donald Trump i riksrettssaken, orker ikke mer mobbing og trekker seg fra hæren.",
+    "url": "https://www.aftenposten.no/verden/i/y3QoOK/Oberstloytnant-som-vitnet-mot-Trump_-gar-av",
+    "urlToImage": "https://premium.vgc.no/ap/images/bd89d0be-e705-4c34-9d52-1a56b5059cd6?fit=crop&q=80&w=1440",
+    "publishedAt": "2020-07-09T05:07:25.190605Z",
+    "content": "smp-stories-top-widget\r\nVindman fikk sparken fra sin stilling i det nasjonale sikkerhetsrådet i Det hvite hus i februar, to dager etter at president Donald Trump ble frikjent.\r\nVindman lå an til forf… [+1055 chars]"
+}, {
+    "source": {
+        "id": "vice-news",
+        "name": "Vice News"
+    },
+    "author": "David Gilbert",
+    "title": "Far-Right Social Network Gab Has a Verified Account Waiting For Trump With 27,000 Followers",
+    "description": "Gab users have been instructed to tweet at and write to the president urging him to join the network, which is filled with conspiracy theories, racism, and antisemitism.",
+    "url": "https://www.vice.com/en_us/article/z3exw4/far-right-social-network-gab-has-a-verified-account-waiting-for-trump-with-27000-followers",
+    "urlToImage": "https://video-images.vice.com/test-uploads/articles/5ecfac1d185c22009661743b/lede/1590670574578-AP_20143569698255.jpeg?crop=1xw:0.8427xh;0xw,0.1573xh&resize=1200:*",
+    "publishedAt": "2020-05-28T13:56:57Z",
+    "content": "Want the best of VICE News straight to your inbox? Sign up here.\r\n As President Donald Trump fumes at Twitters decision to fact-check two of his tweets this week, a ready-made replacement social netw… [+3512 chars]"
+}, {
+    "source": {
+        "id": "vice-news",
+        "name": "Vice News"
+    },
+    "author": "Carter Sherman",
+    "title": "Trump's FDA Won't Let Women Get Abortion Pills Remotely In a Pandemic. So The ACLU Is Suing.",
+    "description": "Pregnant people have make an in-person visit to pick up the pill — even if they've already seen a provider about getting an abortion.",
+    "url": "https://www.vice.com/en_us/article/935yq7/trumps-fda-wont-let-women-get-abortion-pills-remotely-in-a-pandemic-so-the-aclu-is-suing",
+    "urlToImage": "https://video-images.vice.com/test-uploads/articles/5eceae1504ee25009b133490/lede/1590603286527-AbortionPills.jpeg?crop=1xw:0.8425xh;0xw,0.1425xh&resize=1200:*",
+    "publishedAt": "2020-05-27T18:43:49Z",
+    "content": "As the coronavirus pandemic ground almost every U.S. industry to a standstill, the Trump administration urged healthcare professionals to use telemedicine to see patients remotely and stem the spread… [+4029 chars]"
+}, {
+    "source": {
+        "id": "spiegel-online",
+        "name": "Spiegel Online"
+    },
+    "author": "Spiegel Online",
+    "title": "Rekonstruktion der Tötung Soleimanis: Die letzten Minuten des Schattenkriegers",
+    "description": "Als Irans General Soleimani am 3. Januar in Bagdad landet, warten auf dem Rollfeld zwei Autos, ein Toyota und ein Hyundai. Da hat Donald Trump den Befehl schon erteilt.",
+    "url": "https://www.spiegel.de/plus/drohnenangriff-auf-qasem-soleimani-auf-dem-rollfeld-warteten-bereits-zwei-autos-a-393afdbc-f714-4ae6-bb45-61bb855f76d4",
+    "urlToImage": "https://www.spiegel.de/plus/images/5b5a466c-a775-49fb-afd8-85ec25ac3810_w1200_r1_fpx46_fpy27_wm.jpg",
+    "publishedAt": "2020-01-07T13:00:57Z",
+    "content": null
+}, {
+    "source": {
+        "id": "the-jerusalem-post",
+        "name": "The Jerusalem Post"
+    },
+    "author": "Omri Nahmias",
+    "title": "President Donald Trump: Israel keeps having elections, nobody is elected",
+    "description": "Trump joked that his rating in Israel is 98%, and \"if anything happens here, I will take a trip over to Israel to run for prime minister there.”",
+    "url": "https://www.jpost.com/Arab-Israeli-Conflict/President-Donald-Trump-Israel-keeps-having-elections-nobody-is-elected-607687",
+    "urlToImage": "https://images.jpost.com/image/upload/f_auto,fl_lossy/t_Article2016_ControlFaceDetect/443370",
+    "publishedAt": "2019-11-13T02:06:00Z",
+    "content": "WASHINGTON - US President Donald Trump on Tuesday, mocked the political stalemate in Israel, in which Israelis \"keep having elections [but] nobody is elected.” \r\nA video circulating in social media, … [+1773 chars]"
+}, {
+    "source": {
+        "id": "the-american-conservative",
+        "name": "The American Conservative"
+    },
+    "author": null,
+    "title": "A Note to Progressives: Tell Me How This Ends",
+    "description": "The fun house ride of daily shocks and anti-Trump outrages is conditioning us to shut up, don't think, simply react.",
+    "url": "https://www.theamericanconservative.com/articles/a-note-to-progressives-tell-me-how-this-ends/",
+    "urlToImage": "https://www.theamericanconservative.com/wp-content/uploads/2019/11/scary-clowns.jpg",
+    "publishedAt": "2019-11-06T22:24:04.5692132Z",
+    "content": "Dear progressive friends, family, those who have unfriended me in real life and online, deplatformed me, told me I belong to a cult, claimed Im blind, and everyone who suggested I commit physically i… [+7992 chars]"
+}, {
+    "source": {
+        "id": "mashable",
+        "name": "Mashable"
+    },
+    "author": "Rachel Kraus",
+    "title": "Trump and Biden court older women demographic with Facebook ads",
+    "description": "Combined, they have spent millions on targeted Facebook ads.",
+    "url": "https://mashable.com/article/biden-trump-facebook-ads-targeting-women/",
+    "urlToImage": "https://mondrian.mashable.com/2019%252F05%252F28%252Fd2%252Fb4bf8a8b0277463fa17a55c2e0828213.6dd82.png%252F1200x630.png?signature=Xs-B53T_FOeCR6RWJWvAZdt7sfI=",
+    "publishedAt": "2019-05-28T21:52:08Z",
+    "content": "Who do the ladies love the most? Trump and Biden are hoping it's them.\r\nDonald Trump's re-election campaign has been pouring money into Facebook ads, particularly those targeting older women, accordi… [+3467 chars]"
+}]
+
+  constructor(){
+    super();
+    // console.log("hello I'm here in constructor");
+    this.state={
+      article:this.articles,
+      loading:false
+    }
+  }
   render() {
     return (
     <div className="container my-3">
         <h2>NewsNenja  -Top Headline</h2>
+        
         <div className="row my-4">
-          <div className="col-md-4">
-          <NewsItem title="myTitle" description="my description" />
-          </div>
-          <div className="col-md-4">
-          <NewsItem title="myTitle" description="my description" />
-          </div>
-          <div className="col-md-4">
-          <NewsItem title="myTitle" description="my description" />
-          </div>
+        {this.state.article.map(
+          (element)=>{
+            return <div className="col-md-4" key={element.url}>
+            <NewsItem  title={element.title.slice(0,45)} description={element.description.slice(0,88)} 
+            imageURL={element.urlToImage}
+            newsURL={element.url} />
+            </div>
+          }
+        )}
+
         </div>
     </div>
     )
