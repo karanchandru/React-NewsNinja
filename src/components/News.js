@@ -22,7 +22,7 @@ export class News extends Component {
  }
  
  handlePrevClick = async ()=>{
-     console.log("prev");
+   
      let url=`https://newsapi.org/v2/top-headlines?country=us&category=business&apiKey=82375203c639443fb887e14666d06249&page=${this.state.page -1}&pageSize=20`;
      let data=await fetch(url);
      let parsedData=await data.json();     
@@ -33,7 +33,7 @@ export class News extends Component {
 
  }
  handleNextClick= async ()=>{
-    //console.log("next");
+    console.log("next");
      if(Math.ceil(this.state.page +1 > this.state.totalResults/20)){
         console.log(" No next");
      }
