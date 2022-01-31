@@ -16,5 +16,6 @@ You may also see any lint errors in the console.
 
 
 
-
+This application is using NEWS api to fetch the information and display the data
+it has a loading gif to make it more usefull
 
