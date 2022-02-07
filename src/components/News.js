@@ -35,15 +35,19 @@ export class News extends Component {
     document.title=`${this.capitalizeFirstLetter(this.props.category)} - NewsNinja`;
   }
 
-  async updateNews(pageNo){
+  async updateNews(){
+    this.props.setProgress(10);
     let url=`https://newsapi.org/v2/top-headlines?country=${this.props.country}&category=${this.props.category}&apiKey=82375203c639443fb887e14666d06249&page=${this.state.page}&pageSize=${this.props.pageSize}`;
      let data=await fetch(url);
+     this.props.setProgress(30);
      let parsedData=await data.json();
+     this.props.setProgress(70);
      this.setState({
        articles:parsedData.articles,
        totalResults:parsedData.totalResults,
        loading: false,
       })
+      this.props.setProgress(100);
   }
 
  //lifecycle method
@@ -79,7 +83,7 @@ export class News extends Component {
   render() {
     return (
       <>
-        <h1 className="text-center" style={{margin:'40px 0px'}}>NewsNenja  -Top {this.capitalizeFirstLetter(this.props.category)} Headline  </h1>
+        <h1 className="text-center" style={{margin:'40px 0px'}}>NewsNinja  -Top {this.capitalizeFirstLetter(this.props.category)} Headline  </h1>
          {this.state.loading && <Spinner/>}
 
         <InfiniteScroll
